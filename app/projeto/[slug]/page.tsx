@@ -24,50 +24,78 @@ type ProjectDetails = {
   images: string[]
 }
 
-// Dados simulados de projetos (em uma aplicação real, estes viriam de uma API ou CMS)
 const projectsData: ProjectDetails[] = [
   {
     id: 1,
-    title: "Residência Ipanema",
-    slug: "residencia-ipanema",
-    description: "Projeto residencial contemporâneo com vista para o mar",
+    title: "Conforto Térmico em Habitação de Interesse Social",
+    slug: "conforto-termico",
+    description: "São moradias produzidas por Programas Habitacionais, financiadas pelo Governo Federal em parceria com o Estado, Municípios e entidades sem fins lucrativos.",
     fullDescription:
-      "Esta residência de 450m² em Ipanema foi projetada para uma família que valoriza espaços amplos e integrados com a natureza. O projeto explora a relação entre interior e exterior através de grandes aberturas e terraços que emolduram a vista para o mar. Materiais naturais como madeira e pedra foram combinados com elementos contemporâneos, criando um ambiente sofisticado e acolhedor. A iluminação natural foi priorizada em todos os ambientes, reduzindo o consumo energético e criando uma atmosfera agradável durante todo o dia.",
+      " O termo “conforto térmico” define-se pela condição mental do ser humano de expressar satisfação e bem-estar no ambiente em que ele está inserido. Isso significa estar em um lugar onde não sinta a necessidade de utilizar meios para aumentar ou diminuir a temperatura. Cuiabá está localizada no centro oeste do país, numa das regiões mais quentes do Brasil. A temperatura média mensal é de aproximadamente 27°C nos meses de Outubro a Março. Os menores valores de temperaturas médias mensais ocorrem no mês de Junho e Julho, em torno de 22ºC, mas as temperaturas podem atingir até 10°C quando frentes frias vindas do sul passam sobre a região.",
     category: "Residencial",
-    location: "Rio de Janeiro, RJ",
+    location: "Cuiabá-MT",
     year: "2023",
-    area: "450m²",
-    client: "Família Almeida",
-    mainImage: "/placeholder.svg?height=800&width=1200",
+    area: "200m²",
+    client: "UNIVAG",
+    mainImage: "/conforto-termico/1.png",
     images: [
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=800&width=1000",
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=800&width=1000",
+      "/conforto-termico/2.png",
+      "/conforto-termico/3.png",
+      "/conforto-termico/4.png",
+      "/conforto-termico/6.png",
+      "/conforto-termico/7.jpg",
     ],
   },
   {
     id: 2,
-    title: "Escritório Corporativo Paulista",
-    slug: "escritorio-corporativo-paulista",
-    description: "Espaço corporativo moderno na Avenida Paulista",
+    title: "Edifício Colossus",
+    slug: "Edificio-Colossus",
+    description: "O edifício se formou da ideia preliminar separar de os apartamentos em duas torres sobre os pavimentos comerciais e estacionamentos. Como também mesclar a crueza dos materiais utilizados com o verde.",
     fullDescription:
-      "Este projeto de 1200m² para uma empresa de tecnologia na Avenida Paulista buscou criar um ambiente de trabalho que estimulasse a criatividade e colaboração. O layout aberto é complementado por espaços de reunião flexíveis e áreas de descompressão. Utilizamos uma paleta de cores neutras com pontos de cor estratégicos, mobiliário ergonômico e tecnologia integrada. Aspectos de sustentabilidade foram incorporados através de sistemas de iluminação inteligente, aproveitamento da luz natural e materiais de baixo impacto ambiental.",
-    category: "Comercial",
-    location: "São Paulo, SP",
-    year: "2022",
-    area: "1200m²",
-    client: "TechFuture Inc.",
-    mainImage: "/placeholder.svg?height=800&width=1200",
+      " O Edifico se localiza em uma das mais importante avenidas da região leste do município de Cuiabá, Av. Historiador Rubens de Mendonça, em uma zona de centros regionais (ZCR). O estilo arquitetônico utilizado, Eco-brutalismo veio da idealização de reconciliar o ambiente urbano com o natural, como também,  jogar com um senso de justaposição entre conceitos diferentes, o “sombrio” design humano e a vibrante resiliência da natureza. Suas volumetrias e disposições foram pensados para pessoas que estão começando uma nova jornada em sua vida, que procuram espaço e conforto para si, conjugue e sua família. Além de possuir áreas sociais destinadas aos moradores, o edifício também conta com dois pavimentos destinados a salas comerciais abertas ao público.  Facilitando o acesso a certas atividades daqueles que moram no local, como também, atendendo a determinadas necessidades do público ao seu redor.",
+    category: "Residencial",
+    location: "Cuiabá-MT",
+    year: "2024",
+    area: "18.735,96m²",
+    client: "UNIVAG",
+    mainImage: "/colossus/0.png",
     images: [
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=800&width=1000",
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=800&width=1000",
+        "/colossus/2.png",
+        "/colossus/3.png",
+        "/colossus/4.png",
+        "/colossus/5.png",
+        "/colossus/6.png",
+        "/colossus/7.jpg",
+        "/colossus/8.png",
+        "/colossus/9.png",
+        "/colossus/10.png",
+        "/colossus/11.png",
+        "/colossus/12.png",
+        "/colossus/13.jpg",
+        "/colossus/14.jpg",
+        "/colossus/15.png",
+        "/colossus/16.jpg",
+        "/colossus/17.jpg"
+      ],
+  },
+  {
+    id: 3,
+    title: "Casa 300: Uma Proposta de Hostel",
+    slug: "casa-300",
+    description: "Atualmente interditada por suas condições estruturais, a proposta busca requalificar o espaço transformando-o em um hostel cultural, que preserve sua arquitetura colonial original e promova encontros e experiências no coração do centro histórico.",
+    fullDescription:
+      " Sua edificação remonta ao ano de 1731, sendo erguida apenas 12 anos após a fundação de Cuiabá. O casarão é mencionado na literatura local como a residência do Coronel Caracíolo. Durante os anos de 1960 a 1970, a família Mattos residiu nessa casa. Foi lá que o poeta Aclyse de Mattos e seu irmão, o escritor e quadrinista Gabriel Francisco de Mattos, passaram parte de sua infância. Nos primeiros anos da década de 1990, o imóvel abrigou o restaurante e casa de espetáculos Casarão, que era administrado pelo ator Liu Arruda, conhecido por criar a famosa personagem Comadre Nhara. No ano de 1998, por meio da união de diversas entidades culturais, tais como a AMA - Associação Mato-grossense de Artesãos, a AMAV - Associação Mato-grossense de Áudio/Visual e a FEMAT Federação Mato-grossense de Teatro, o casarão passou a ser conhecido como Centro Cultural Oficina 300. Desse modo, o edifício se tornou um renomado espaço cultural alternativo no centro histórico de Cuiabá. Além disso, o Centro Cultural Oficina 300 foi frequentemente utilizado como local de encontros do Fórum Mato-grossense Permanente de Cultura, reforçando sua relevância como um ponto de referência cultural na região. Atualmente a Casa 300 encontra-se interditada devido suas más condições estruturais atuais, apresentando risco de desabamento aos visitantes.",
+    category: "Cultural",
+    location: "Cuiabá-MT",
+    year: "2023",
+    area: "583m²",
+    client: "UNIVAG",
+    mainImage: "/1/1.png",
+    images: [
+      "/1/2.png",
+      "/1/3.png",
+      "/1/4.png",
+      "/1/6.png",
     ],
   },
 ]
@@ -81,17 +109,14 @@ export default function ProjectPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
-    // Simulando uma chamada de API para buscar os detalhes do projeto
     const fetchProject = () => {
       setLoading(true)
-      // Em uma aplicação real, isso seria uma chamada de API
       const foundProject = projectsData.find((p) => p.slug === slug)
 
       if (foundProject) {
         setProject(foundProject)
         setSelectedImage(foundProject.mainImage)
       } else {
-        // Projeto não encontrado, redirecionar para a página de projetos
         router.push("/#projetos")
       }
 

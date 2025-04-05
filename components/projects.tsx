@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation"
 type Project = {
   id: number
   title: string
-  category: string
+  category: string[]
   image: string
   year: string
   slug: string
@@ -26,59 +26,36 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Residência Ipanema",
-      category: "Residencial",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Conforto Térmico em Habitação de Interesse Social",
+      category: ["Residencial"],
+      image: "/conforto-termico/4.png",
       year: "2023",
-      slug: "residencia-ipanema",
+      slug: "conforto-termico",
     },
     {
       id: 2,
-      title: "Escritório Corporativo Paulista",
-      category: "Comercial",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2022",
-      slug: "escritorio-corporativo-paulista",
+      title: "Edifício Colossus",
+      category: ["Residencial", "Comercial"],
+      image: "/colossus/0.png",
+      year: "2024",
+      slug: "Edificio-Colossus",
     },
     {
       id: 3,
-      title: "Loft Vila Nova Conceição",
-      category: "Residencial",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Casa 300: Uma Proposta de Hostel",
+      category: ["Cultural"],
+      image: "/1/1.png",
       year: "2023",
-      slug: "loft-vila-nova-conceicao",
-    },
-    {
-      id: 4,
-      title: "Restaurante Jardins",
-      category: "Comercial",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2021",
-      slug: "restaurante-jardins",
-    },
-    {
-      id: 5,
-      title: "Casa de Praia Guarujá",
-      category: "Residencial",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2022",
-      slug: "casa-de-praia-guaruja",
-    },
-    {
-      id: 6,
-      title: "Galeria de Arte Pinheiros",
-      category: "Cultural",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2023",
-      slug: "galeria-de-arte-pinheiros",
-    },
+      slug: "casa-300",
+    },    
   ]
 
   const [activeFilter, setActiveFilter] = useState("Todos")
   const categories = ["Todos", "Residencial", "Comercial", "Cultural"]
 
   const filteredProjects =
-    activeFilter === "Todos" ? projects : projects.filter((project) => project.category === activeFilter)
+    activeFilter === "Todos" ? projects     : projects.filter((project) => project.category.includes(activeFilter))
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -177,9 +154,6 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button variant="outline" className="border-zinc-700 hover:bg-zinc-800">
-            Ver Todos os Projetos <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
         </motion.div>
       </div>
     </section>
