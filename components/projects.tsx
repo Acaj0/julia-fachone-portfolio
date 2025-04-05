@@ -1,0 +1,188 @@
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
+
+type Project = {
+  id: number
+  title: string
+  category: string
+  image: string
+  year: string
+  slug: string
+}
+
+export default function Projects() {
+  const router = useRouter()
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "Residência Ipanema",
+      category: "Residencial",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2023",
+      slug: "residencia-ipanema",
+    },
+    {
+      id: 2,
+      title: "Escritório Corporativo Paulista",
+      category: "Comercial",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2022",
+      slug: "escritorio-corporativo-paulista",
+    },
+    {
+      id: 3,
+      title: "Loft Vila Nova Conceição",
+      category: "Residencial",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2023",
+      slug: "loft-vila-nova-conceicao",
+    },
+    {
+      id: 4,
+      title: "Restaurante Jardins",
+      category: "Comercial",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2021",
+      slug: "restaurante-jardins",
+    },
+    {
+      id: 5,
+      title: "Casa de Praia Guarujá",
+      category: "Residencial",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2022",
+      slug: "casa-de-praia-guaruja",
+    },
+    {
+      id: 6,
+      title: "Galeria de Arte Pinheiros",
+      category: "Cultural",
+      image: "/placeholder.svg?height=600&width=800",
+      year: "2023",
+      slug: "galeria-de-arte-pinheiros",
+    },
+  ]
+
+  const [activeFilter, setActiveFilter] = useState("Todos")
+  const categories = ["Todos", "Residencial", "Comercial", "Cultural"]
+
+  const filteredProjects =
+    activeFilter === "Todos" ? projects : projects.filter((project) => project.category === activeFilter)
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }
+
+  const handleProjectClick = (slug: string) => {
+    router.push(`/projeto/${slug}`)
+  }
+
+  return (
+    <section id="projetos" className="py-20 md:py-32 bg-black">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-zinc-400 text-lg mb-2">PORTFÓLIO</h2>
+          <h3 className="text-3xl md:text-4xl font-bitter font-bold mb-6">Projetos Selecionados</h3>
+          <p className="text-zinc-400 max-w-2xl mx-auto">
+            Uma seleção dos meus trabalhos mais recentes e significativos, demonstrando minha abordagem para diferentes
+            tipos de espaços e necessidades.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={activeFilter === category ? "default" : "outline"}
+              className={
+                activeFilter === category ? "bg-zinc-800 hover:bg-zinc-700" : "border-zinc-700 hover:bg-zinc-800"
+              }
+              onClick={() => setActiveFilter(category)}
+            >
+              {category}
+            </Button>
+          ))}
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              transition={{ duration: 0.5 }}
+              className="group relative overflow-hidden rounded-md cursor-pointer"
+              onClick={() => handleProjectClick(project.slug)}
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span className="text-zinc-400 text-sm">
+                  {project.category} • {project.year}
+                </span>
+                <h4 className="text-xl font-medium mt-1">{project.title}</h4>
+                <Button variant="link" className="text-white p-0 mt-2 w-fit">
+                  Ver Projeto <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Button variant="outline" className="border-zinc-700 hover:bg-zinc-800">
+            Ver Todos os Projetos <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
