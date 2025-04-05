@@ -28,7 +28,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-zinc-700" />
             <img
-              src="/placeholder.svg?height=600&width=500"
+              src="/julia.jpg"
               alt="Julia Leão Fachone"
               className="w-full h-auto rounded-md relative z-10"
             />

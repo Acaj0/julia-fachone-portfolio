@@ -9,9 +9,9 @@ export default function Hero() {
     <section className="relative h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black  to-black/30 z-10" />
         <img
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/colossus/0.png"
           alt="Arquitetura moderna"
           className="w-full h-full object-cover"
         />
@@ -54,13 +54,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4"
           >
+            <a href="#projetos">
             <Button className="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-6 rounded-md">
               Ver Projetos
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" className="border-zinc-700 hover:bg-zinc-800 px-8 py-6">
+            </Button></a>
+            <a href="#contato"><Button variant="outline" className="border-zinc-700 hover:bg-zinc-800 px-8 py-6">
               Agendar Consulta
-            </Button>
+            </Button></a>
           </motion.div>
         </div>
       </div>

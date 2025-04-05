@@ -59,9 +59,9 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button variant="outline" className="border-zinc-700 hover:bg-zinc-800">
+            <a href="#contato"><Button variant="outline" className="border-zinc-700 hover:bg-zinc-800">
               Agendar Consulta
-            </Button>
+            </Button></a>
           </nav>
 
           {/* Mobile Menu Button */}
