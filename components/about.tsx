@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function About() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
     <section id="sobre" className="py-20 md:py-32 bg-zinc-950">
@@ -36,27 +36,43 @@ export default function About() {
           </div>
 
           <div>
-            <motion.div variants={variants} transition={{ duration: 0.5, delay: 0.2 }}>
+            <motion.div
+              variants={variants}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <h2 className="text-zinc-400 text-lg mb-2">SOBRE MIM</h2>
-              <h3 className="text-3xl md:text-4xl font-bitter font-bold mb-6">Julia Leão Fachone</h3>
+              <h3 className="text-3xl md:text-4xl font-bitter font-bold mb-6">
+                Julia Leão Fachone
+              </h3>
             </motion.div>
 
-            <motion.div variants={variants} transition={{ duration: 0.5, delay: 0.4 }}>
+            <motion.div
+              variants={variants}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <p className="text-zinc-400 mb-6">
-                Arquiteta formada pela Universidade de São Paulo, com especialização em Design de Interiores pela
-                Parsons School of Design em Nova York. Com mais de 10 anos de experiência, meu trabalho é reconhecido
-                pela fusão de estética contemporânea e funcionalidade.
+                Arquiteta formada pela UNIVAG, com especialização em
+                Empreendedorismo pelo Empretec. Atualmente integra a equipe da
+                JLF Construtora, onde desenvolve projetos residenciais e
+                comerciais com foco em inovação, eficiência e viabilidade.
               </p>
               <p className="text-zinc-400 mb-6">
-                Acredito que a arquitetura vai além da construção de espaços físicos – é sobre criar ambientes que
-                inspiram, acolhem e transformam vidas. Cada projeto é uma oportunidade de traduzir sonhos em realidade,
-                respeitando o contexto urbano e ambiental.
+                Seu grande diferencial está no acompanhamento próximo das obras
+                — Júlia faz questão de estar presente no campo, garantindo que
+                cada etapa do projeto seja executada com excelência e fidelidade
+                ao conceito original.
+              </p>
+              <p className="text-zinc-400 mb-6">
+                Acredita que a arquitetura vai além do papel: é na vivência do
+                canteiro e na escuta ativa dos clientes que surgem soluções que
+                realmente transformam. Para ela, criar espaços é transformar
+                rotinas, promover bem-estar e valorizar cada detalhe que torna
+                um ambiente único.
               </p>
             </motion.div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
