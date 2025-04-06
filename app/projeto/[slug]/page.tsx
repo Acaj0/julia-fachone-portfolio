@@ -141,6 +141,37 @@ const projectsData: ProjectDetails[] = [
       "/3/11.png",
     ],
   },
+  {
+    id: 6,
+    title: "CETAS - Centro de Triagem para Animais Silvestres",
+    slug: "CETAS",
+    description: "OS CETAS são unidades encarregadas do cuidado com os animais silvestres, realizando a recepção, identificação, marcação, triagem, avaliação, tratamento, reabilitação e destino dos animais provenientes de fiscalização, resgates ou entrega voluntária da comunidade.",
+    fullDescription:
+      "O Centro realiza estudos científicos e atividades de conscientização ambiental. Não existem CETAS localizado no estado de Mato Grosso. No total foram levantados 45 CETAS no território brasileiro, sendo 23 administrados pelo IBAMA, 7 por órgãos municipais, 5 por órgãos estaduais, 4 por ONGs, 4 por iniciativa privada e 2 por universidades. O centro de educação foi inserido na curva mais alta do terreno (645.0), com o intuito de atuar, também, como um mirante. Os outros blocos do edifício foram postos de maneira que os funcionários pudessem seguir um fluxo contínuo até o setor dos animais, assim como, os recintos destinados aos animais pudessem ficar o mais distante possível da via e do fluxo de veículos e o mais perto das áreas verdes.",
+    category: "Comercial",
+    location: "Chapada dos Guimarães-MT",
+    year: "2024",
+    area: "49.287,59m²",
+    client: "UNIVAG",
+    mainImage: "/tcc/0.png",
+    images: [
+      "/tcc/1.png",
+      "/tcc/2.png",
+      "/tcc/3.png",
+      "/tcc/4.png",
+      "/tcc/6.png",
+      "/tcc/5.png",
+      "/tcc/7.png",
+      "/tcc/8.png",
+      "/tcc/9.png",
+      "/tcc/10.png",
+      "/tcc/11.png",
+      "/tcc/12.png",
+      "/tcc/13.png",
+      "/tcc/14.png",
+      "/tcc/15.png",
+    ],
+  },
 ]
 
 export default function ProjectPage() {
