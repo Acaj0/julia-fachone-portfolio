@@ -47,11 +47,27 @@ export default function Projects() {
       image: "/1/1.png",
       year: "2023",
       slug: "casa-300",
-    },    
+    },
+    {
+      id: 4,
+      title: "Pavilhão - Vale das Cachoeiras",
+      category: ["Cultural"],
+      image: "/2/0.png",
+      year: "2023",
+      slug: "pavilhao",
+    },
+    {
+      id: 5,
+      title: "Projeto de Requalificação Urbana",
+      category: ["Urbanismo"],
+      image: "/3/0.png",
+      year: "2023",
+      slug: "urbanismo",
+    },  
   ]
 
   const [activeFilter, setActiveFilter] = useState("Todos")
-  const categories = ["Todos", "Residencial", "Comercial", "Cultural"]
+  const categories = ["Todos", "Residencial", "Comercial", "Cultural","Urbanismo"]
 
   const filteredProjects =
     activeFilter === "Todos" ? projects     : projects.filter((project) => project.category.includes(activeFilter))
