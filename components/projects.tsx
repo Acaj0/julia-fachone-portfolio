@@ -64,6 +64,14 @@ export default function Projects() {
       year: "2023",
       slug: "urbanismo",
     },  
+    {
+      id: 6,
+      title: "CETAS - Centro de Triagem para Animais Silvestres",
+      category: ["Cultural", "Comercial"],
+      image: "/tcc/0.png",
+      year: "2024",
+      slug: "CETAS",
+    },  
   ]
 
   const [activeFilter, setActiveFilter] = useState("Todos")
