@@ -17,7 +17,6 @@ const bitter = Bitter({
 export const metadata: Metadata = {
   title: "Julia Leão Fachone | Arquitetura",
   description: "Portfólio de arquitetura de Julia Leão Fachone - Criando espaços inovadores e funcionais",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
