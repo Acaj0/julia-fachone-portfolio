@@ -22,24 +22,7 @@ export default function Footer() {
               inovador e sustentável.
             </p>
             <div className="flex space-x-4">
-              <Link
-                href="https://instagram.com"
-                className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
-              >
-                <Instagram size={18} />
-              </Link>
-              <Link
-                href="https://linkedin.com"
-                className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
-              >
-                <Linkedin size={18} />
-              </Link>
-              <Link
-                href="https://facebook.com"
-                className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
-              >
-                <Facebook size={18} />
-              </Link>
+             
             </div>
           </div>
 
