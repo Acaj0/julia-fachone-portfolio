@@ -69,7 +69,6 @@ export default function Contact() {
 
         <div className="bg-zinc-900/80 rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Contact Info Column */}
             <div className="bg-zinc-900 p-8">
               <h4 className="text-xl font-medium mb-8">Informações de Contato</h4>
 
@@ -81,10 +80,10 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-zinc-400">Email</p>
                     <a
-                      href="mailto:contato@juliafachone.com.br"
+                      href="mailto:julia.fachone@gmail.com"
                       className="font-medium hover:text-zinc-300 transition-colors"
                     >
-                      contato@juliafachone.com.br
+                      julia.fachone@gmail.com
                     </a>
                   </div>
                 </div>
@@ -95,8 +94,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-zinc-400">Telefone</p>
-                    <a href="tel:+5565999999999" className="font-medium hover:text-zinc-300 transition-colors">
-                      +55 (65) 99999-9999
+                    <a href="tel:+556599918505" className="font-medium hover:text-zinc-300 transition-colors">
+                    +55 (65) 9991-8505
                     </a>
                   </div>
                 </div>
@@ -107,7 +106,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Form Column */}
             <div className="p-8 bg-zinc-900">
               <h4 className="text-xl font-medium mb-6">Envie uma Mensagem</h4>
 
