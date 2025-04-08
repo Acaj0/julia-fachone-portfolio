@@ -45,7 +45,7 @@ export default function About() {
     },
     {
       name: "AutoCAD",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AutoCAD-logo-kIhsudiBw6StqAC2MPk1yVcuU38SZO.png",
+      image: "/autocad.png",
       description: "Desenho técnico preciso para documentação",
     },
   ]
