@@ -45,7 +45,7 @@ export default function About() {
     },
     {
       name: "AutoCAD",
-      image: "/autocad.png",
+      image: "/autocad.svg",
       description: "Desenho técnico preciso para documentação",
     },
   ]

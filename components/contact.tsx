@@ -7,9 +7,12 @@ import { useInView } from "react-intersection-observer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, Send } from "lucide-react"
+import { Mail, Phone, Send, Loader2 } from "lucide-react"
+import { sendEmail } from "@/app/actions/send-email"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function Contact() {
+  const { toast } = useToast()
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -22,16 +25,43 @@ export default function Contact() {
     message: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
-    alert("Mensagem enviada com sucesso!")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setIsSubmitting(true)
+
+    try {
+      const result = await sendEmail(formData)
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada",
+          description: "Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.",
+          variant: "default",
+        })
+        setFormData({ name: "", email: "", phone: "", message: "" })
+      } else {
+        toast({
+          title: "Erro ao enviar mensagem",
+          description: result.error || "Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const containerVariants = {
@@ -95,7 +125,7 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-zinc-400">Telefone</p>
                     <a href="tel:+556599918505" className="font-medium hover:text-zinc-300 transition-colors">
-                    +55 (65) 9991-8505
+                      +55 (65) 9991-8505
                     </a>
                   </div>
                 </div>
@@ -119,6 +149,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-500"
+                    disabled={isSubmitting}
                   />
 
                   <Input
@@ -129,6 +160,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-500"
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -139,6 +171,7 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-500"
+                  disabled={isSubmitting}
                 />
 
                 <Textarea
@@ -148,11 +181,24 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-500 min-h-[120px]"
+                  disabled={isSubmitting}
                 />
 
                 <div className="text-right">
-                  <Button type="submit" className="bg-zinc-800 hover:bg-zinc-700 transition-colors p-6">
-                    Enviar Mensagem <Send className="ml-2 h-4 w-4" />
+                  <Button
+                    type="submit"
+                    className="bg-zinc-800 hover:bg-zinc-700 transition-colors p-6"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando...
+                      </>
+                    ) : (
+                      <>
+                        Enviar Mensagem <Send className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </Button>
                 </div>
               </form>
@@ -163,4 +209,3 @@ export default function Contact() {
     </section>
   )
 }
-
