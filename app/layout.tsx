@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat, Bitter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/toaster"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -29,12 +30,9 @@ export default function RootLayout({
       <body className={`${montserrat.variable} ${bitter.variable} font-sans bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'
