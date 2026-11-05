@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-black  to-black/30 z-10" />
         <img
-          src="/colossus/0.png"
+          src="/colossus/0.webp"
           alt="Arquitetura moderna"
           className="w-full h-full object-cover"
         />

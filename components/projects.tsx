@@ -28,7 +28,7 @@ export default function Projects() {
       id: 1,
       title: "Conforto Térmico em Habitação de Interesse Social",
       category: ["Residencial"],
-      image: "/conforto-termico/4.png",
+      image: "/conforto-termico/4.webp",
       year: "2023",
       slug: "conforto-termico",
     },
@@ -36,7 +36,7 @@ export default function Projects() {
       id: 2,
       title: "Edifício Colossus",
       category: ["Residencial", "Comercial"],
-      image: "/colossus/0.png",
+      image: "/colossus/0.webp",
       year: "2024",
       slug: "Edificio-Colossus",
     },
@@ -44,7 +44,7 @@ export default function Projects() {
       id: 3,
       title: "Casa 300: Uma Proposta de Hostel",
       category: ["Cultural"],
-      image: "/1/1.png",
+      image: "/1/1.webp",
       year: "2023",
       slug: "casa-300",
     },
@@ -52,7 +52,7 @@ export default function Projects() {
       id: 4,
       title: "Pavilhão - Vale das Cachoeiras",
       category: ["Cultural"],
-      image: "/2/0.png",
+      image: "/2/0.webp",
       year: "2023",
       slug: "pavilhao",
     },
@@ -60,7 +60,7 @@ export default function Projects() {
       id: 5,
       title: "Projeto de Requalificação Urbana",
       category: ["Urbanismo"],
-      image: "/3/0.png",
+      image: "/3/0.webp",
       year: "2023",
       slug: "urbanismo",
     },  
@@ -68,7 +68,7 @@ export default function Projects() {
       id: 6,
       title: "CETAS - Centro de Triagem para Animais Silvestres",
       category: ["Cultural", "Comercial"],
-      image: "/tcc/0.png",
+      image: "/tcc/0.webp",
       year: "2024",
       slug: "CETAS",
     },  
@@ -154,6 +154,8 @@ export default function Projects() {
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

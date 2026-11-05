@@ -37,13 +37,13 @@ const projectsData: ProjectDetails[] = [
     year: "2023",
     area: "200m²",
     client: "UNIVAG",
-    mainImage: "/conforto-termico/1.png",
+    mainImage: "/conforto-termico/1.webp",
     images: [
-      "/conforto-termico/2.png",
-      "/conforto-termico/3.png",
-      "/conforto-termico/4.png",
-      "/conforto-termico/6.png",
-      "/conforto-termico/7.jpg",
+      "/conforto-termico/2.webp",
+      "/conforto-termico/3.webp",
+      "/conforto-termico/4.webp",
+      "/conforto-termico/6.webp",
+      "/conforto-termico/7.webp",
     ],
   },
   {
@@ -58,19 +58,19 @@ const projectsData: ProjectDetails[] = [
     year: "2024",
     area: "18.735,96m²",
     client: "UNIVAG",
-    mainImage: "/colossus/0.png",
+    mainImage: "/colossus/0.webp",
     images: [
-        "/colossus/2.png",
-        "/colossus/3.png",
-        "/colossus/5.png",
-        "/colossus/6.png",
-        "/colossus/8.png",
-        "/colossus/9.png",
-        "/colossus/10.png",
-        "/colossus/11.png",
-        "/colossus/13.jpg",
-        "/colossus/16.jpg",
-        "/colossus/17.jpg"
+        "/colossus/2.webp",
+        "/colossus/3.webp",
+        "/colossus/5.webp",
+        "/colossus/6.webp",
+        "/colossus/8.webp",
+        "/colossus/9.webp",
+        "/colossus/10.webp",
+        "/colossus/11.webp",
+        "/colossus/13.webp",
+        "/colossus/16.webp",
+        "/colossus/17.webp"
       ],
   },
   {
@@ -85,12 +85,12 @@ const projectsData: ProjectDetails[] = [
     year: "2023",
     area: "583m²",
     client: "UNIVAG",
-    mainImage: "/1/1.png",
+    mainImage: "/1/1.webp",
     images: [
-      "/1/2.png",
-      "/1/3.png",
-      "/1/4.png",
-      "/1/6.png",
+      "/1/2.webp",
+      "/1/3.webp",
+      "/1/4.webp",
+      "/1/6.webp",
     ],
   },
   {
@@ -105,13 +105,13 @@ const projectsData: ProjectDetails[] = [
     year: "2023",
     area: "0m²",
     client: "UNIVAG",
-    mainImage: "/2/0.png",
+    mainImage: "/2/0.webp",
     images: [
-      "/2/1.png",
-      "/2/2.png",
-      "/2/3.png",
-      "/2/4.png",
-      "/2/6.png",
+      "/2/1.webp",
+      "/2/2.webp",
+      "/2/3.webp",
+      "/2/4.webp",
+      "/2/6.webp",
     ],
   },
   {
@@ -126,19 +126,19 @@ const projectsData: ProjectDetails[] = [
     year: "2023",
     area: "Não Definida",
     client: "UNIVAG",
-    mainImage: "/3/0.png",
+    mainImage: "/3/0.webp",
     images: [
-      "/3/1.png",
-      "/3/2.png",
-      "/3/3.png",
-      "/3/4.png",
-      "/3/6.png",
-      "/3/5.png",
-      "/3/7.png",
-      "/3/8.png",
-      "/3/9.png",
-      "/3/10.png",
-      "/3/11.png",
+      "/3/1.webp",
+      "/3/2.webp",
+      "/3/3.webp",
+      "/3/4.webp",
+      "/3/6.webp",
+      "/3/5.webp",
+      "/3/7.webp",
+      "/3/8.webp",
+      "/3/9.webp",
+      "/3/10.webp",
+      "/3/11.webp",
     ],
   },
   {
@@ -153,23 +153,23 @@ const projectsData: ProjectDetails[] = [
     year: "2024",
     area: "49.287,59m²",
     client: "UNIVAG",
-    mainImage: "/tcc/0.png",
+    mainImage: "/tcc/0.webp",
     images: [
-      "/tcc/1.png",
-      "/tcc/2.png",
-      "/tcc/3.png",
-      "/tcc/4.png",
-      "/tcc/6.png",
-      "/tcc/5.png",
-      "/tcc/7.png",
-      "/tcc/8.png",
-      "/tcc/9.png",
-      "/tcc/10.png",
-      "/tcc/11.png",
-      "/tcc/12.png",
-      "/tcc/13.png",
-      "/tcc/14.png",
-      "/tcc/15.png",
+      "/tcc/1.webp",
+      "/tcc/2.webp",
+      "/tcc/3.webp",
+      "/tcc/4.webp",
+      "/tcc/6.webp",
+      "/tcc/5.webp",
+      "/tcc/7.webp",
+      "/tcc/8.webp",
+      "/tcc/9.webp",
+      "/tcc/10.webp",
+      "/tcc/11.webp",
+      "/tcc/12.webp",
+      "/tcc/13.webp",
+      "/tcc/14.webp",
+      "/tcc/15.webp",
     ],
   },
 ]
@@ -278,6 +278,8 @@ export default function ProjectPage() {
           </button>
 
           <img
+            loading="lazy"
+            decoding="async"
             src={selectedImage || "/placeholder.svg"}
             alt={project.title}
             className="max-h-[90vh] max-w-[90vw] object-contain"
@@ -370,6 +372,8 @@ export default function ProjectPage() {
             onClick={() => openLightbox(project.mainImage)}
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={project.mainImage || "/placeholder.svg"}
               alt={project.title}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -458,6 +462,8 @@ export default function ProjectPage() {
                 onClick={() => openLightbox(image)}
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={image || "/placeholder.svg"}
                   alt={`${project.title} - Imagem ${index + 1}`}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
